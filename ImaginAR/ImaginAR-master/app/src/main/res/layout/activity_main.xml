@@ -6,15 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/clover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="272dp"
-        android:elevation="6dp"
-        android:src="@drawable/clover"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:id="@+id/textsplash"
@@ -46,33 +38,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/texthome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:elevation="6dp"
-        android:gravity="left"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Explore"
-            android:textColor="#FFF"
-            android:textSize="24sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Simply makes design good"
-            android:textColor="#FFF"
-            android:textSize="16sp" />
-
-    </LinearLayout>
 
 
     <LinearLayout
@@ -97,6 +63,7 @@
             android:orientation="horizontal">
 
 
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,7 +76,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/bitcon" />
+                    android:src="@drawable/threed" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,7 +99,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/bellcon" />
+                    android:src="@drawable/png" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -166,7 +133,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/bookcon" />
+                    android:src="@drawable/models" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -185,11 +152,12 @@
                 android:orientation="vertical">
 
 
+
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/bugcon" />
+                    android:src="@drawable/just_for_fun" />
 
                 <TextView
                     android:layout_width="wrap_content"
