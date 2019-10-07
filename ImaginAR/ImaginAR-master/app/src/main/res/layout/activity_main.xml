@@ -25,16 +25,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Good Morning"
+            android:text="ImaginAR"
             android:textColor="#FFF"
-            android:textSize="24sp" />
+            android:textSize="30dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mr Panda Risky"
+            android:text="Experience to Augmented Reality"
             android:textColor="#FFF"
-            android:textSize="16sp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
@@ -72,18 +72,18 @@
                 android:orientation="vertical">
 
 
-                <ImageView
+
+
+                <Button
+                    android:id="@+id/png"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/threed" />
+                    android:background="@drawable/btn_gradient_style"
+                    android:text="PNG"
+                    android:textColor="#fff"
+                    />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="BitCoin"
-                    android:textColor="#0E1843"
-                    android:textSize="22sp" />
+
 
             </LinearLayout>
 
@@ -94,19 +94,17 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
-                <ImageView
+                <Button
+                    android:id="@+id/threed"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/png" />
+                    android:background="@drawable/btn_gradient_style"
+                    android:text="3D face"
+                    android:textColor="#fff"
+                    />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bells"
-                    android:textColor="#0E1843"
-                    android:textSize="22sp" />
+
+
 
             </LinearLayout>
 
@@ -129,19 +127,14 @@
                 android:orientation="vertical">
 
 
-                <ImageView
+                <Button
+                    android:id="@+id/models"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/models" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Books"
-                    android:textColor="#0E1843"
-                    android:textSize="22sp" />
-
+                    android:background="@drawable/btn_gradient_style"
+                    android:text="Models"
+                    android:textColor="#fff"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -153,18 +146,14 @@
 
 
 
-                <ImageView
+                <Button
+                    android:id="@+id/jff"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/just_for_fun" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Reports"
-                    android:textColor="#0E1843"
-                    android:textSize="22sp" />
+                    android:background="@drawable/btn_gradient_style"
+                    android:text="Just for fun"
+                    android:textColor="#fff"
+                    />
 
             </LinearLayout>
 
