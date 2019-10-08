@@ -1,9 +1,12 @@
 package com.vesit.imaginar.one;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -15,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView bgapp;
     LinearLayout textsplash, texthome, menus;
     Animation frombottom;
+    Button button_3d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +42,11 @@ public class MainActivity extends AppCompatActivity {
         menus.startAnimation(frombottom);
 
 
+    }
+
+    public void goTo3DCamera(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, HelloSceneformActivity.class);
+        startActivity(intent);
     }
 }

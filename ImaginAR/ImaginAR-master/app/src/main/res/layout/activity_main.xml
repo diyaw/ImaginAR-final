@@ -101,6 +101,7 @@
                     android:background="@drawable/btn_gradient_style"
                     android:text="3D face"
                     android:textColor="#fff"
+                    android:onClick="goTo3DCamera"
                     />
 
 
