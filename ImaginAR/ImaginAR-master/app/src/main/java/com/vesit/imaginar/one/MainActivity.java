@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView bgapp;
     LinearLayout textsplash, texthome, menus;
     Animation frombottom;
-    Button button_3d;
+    //Button button_3d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
     public void goTo3DCamera(View view)
     {
         Intent intent = new Intent(MainActivity.this, HelloSceneformActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToModelCamera(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, ModelActivity.class);
         startActivity(intent);
     }
 }

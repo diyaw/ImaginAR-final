@@ -135,6 +135,7 @@
                     android:background="@drawable/btn_gradient_style"
                     android:text="Models"
                     android:textColor="#fff"
+                    android:onClick="goToModelCamera"
                     />
             </LinearLayout>
 

@@ -41,7 +41,7 @@ public class HelloSceneformActivity extends AppCompatActivity {
     private ModelRenderable faceRegionsRenderable;
 
     private FaceArFragment arFragment;
-    private ModelRenderable andyRenderable;
+    //private ModelRenderable andyRenderable;
 
     @Override
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
