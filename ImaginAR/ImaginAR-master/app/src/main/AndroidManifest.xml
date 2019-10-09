@@ -3,8 +3,11 @@
     package="com.vesit.imaginar.one">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-feature android:name="android.hardware.camera.ar" android:required="true" />
+
+
 
     <application
         android:allowBackup="true"
@@ -29,6 +32,16 @@
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.ar.codelab.name.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths"/>
+        </provider>
     </application>
 
 </manifest>
