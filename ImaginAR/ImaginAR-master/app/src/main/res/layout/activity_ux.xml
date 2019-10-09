@@ -1,0 +1,15 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vesit.imaginar.one.HelloSceneformActivity"
+    tools:layout="@layout/activity_ux">
+
+    <fragment android:name="com.vesit.imaginar.one.FaceArFragment"
+        android:id="@+id/ux_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/activity_ux" />
+
+</FrameLayout>
