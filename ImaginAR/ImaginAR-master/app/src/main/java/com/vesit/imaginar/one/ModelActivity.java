@@ -64,7 +64,6 @@ public class ModelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_model);
         Toolbar toolbar;
-        //toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar = findViewById(R.id.toolbar);
 
 
@@ -176,12 +175,14 @@ public class ModelActivity extends AppCompatActivity {
             }
         }
     }
+
     private boolean updateTracking() {
         Frame frame = fragment.getArSceneView().getArFrame();
         boolean wasTracking = isTracking;
         isTracking = frame.getCamera().getTrackingState() == TrackingState.TRACKING;
         return isTracking != wasTracking;
     }
+
     private boolean updateHitTest() {
         Frame frame = fragment.getArSceneView().getArFrame();
         android.graphics.Point pt = getScreenCenter();
@@ -228,31 +229,32 @@ public class ModelActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         ImageView andy = new ImageView(this);
         andy.setImageResource(R.drawable.droid_thumb);
         andy.setContentDescription("andy");
-        andy.setOnClickListener(view ->{addObject( Uri.parse("andy_dance.sfb"));});
+        andy.setOnClickListener(view -> addObject( Uri.parse("andy_dance.sfb")));
         gallery.addView(andy);
 
         ImageView cabin = new ImageView(this);
         cabin.setImageResource(R.drawable.cabin_thumb);
         cabin.setContentDescription("cabin");
-        cabin.setOnClickListener(view ->{addObject(Uri.parse("Cabin.sfb"));});
+        cabin.setOnClickListener(view -> addObject(Uri.parse("Cabin.sfb")));
         gallery.addView(cabin);
 
         ImageView house = new ImageView(this);
         house.setImageResource(R.drawable.house_thumb);
         house.setContentDescription("house");
-        house.setOnClickListener(view ->{addObject(Uri.parse("House.sfb"));});
+        house.setOnClickListener(view -> addObject(Uri.parse("House.sfb")));
         gallery.addView(house);
 
         ImageView igloo = new ImageView(this);
         igloo.setImageResource(R.drawable.igloo_thumb);
         igloo.setContentDescription("igloo");
-        igloo.setOnClickListener(view ->{addObject(Uri.parse("igloo.sfb"));});
+        igloo.setOnClickListener(view -> addObject(Uri.parse("igloo.sfb")));
         gallery.addView(igloo);
     }
 
@@ -280,7 +282,7 @@ public class ModelActivity extends AppCompatActivity {
                 .setTitle("Codelab error!");
         AlertDialog dialog = builder.create();
         dialog.show();
-        return;
+
     }
 
     public void addNodeToScene(Anchor anchor, ModelRenderable renderable) {

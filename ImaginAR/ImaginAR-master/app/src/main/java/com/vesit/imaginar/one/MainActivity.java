@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -46,13 +45,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void goTo3DCamera(View view)
     {
-        Intent intent = new Intent(MainActivity.this, HelloSceneformActivity.class);
+        Intent intent = new Intent(MainActivity.this, FaceModel.class);
         startActivity(intent);
     }
 
     public void goToModelCamera(View view)
     {
         Intent intent = new Intent(MainActivity.this, ModelActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToPNG(View view){
+        Intent intent = new Intent(MainActivity.this, PNG.class);
         startActivity(intent);
     }
 }

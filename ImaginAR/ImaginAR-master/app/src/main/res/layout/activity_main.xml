@@ -25,16 +25,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ImaginAR"
+            android:text="@string/imaginar"
             android:textColor="#FFF"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Experience to Augmented Reality"
+            android:text="@string/experience_to_augmented_reality"
             android:textColor="#FFF"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -67,11 +67,9 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp"
                 android:gravity="center"
                 android:orientation="vertical">
-
-
 
 
                 <Button
@@ -79,9 +77,9 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/btn_gradient_style"
-                    android:text="PNG"
-                    android:textColor="#fff"
-                    />
+                    android:onClick="goToPNG"
+                    android:text="@string/png"
+                    android:textColor="#fff" />
 
 
 
@@ -90,7 +88,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -99,7 +97,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/btn_gradient_style"
-                    android:text="3D face"
+                    android:text="@string/_3d_face"
                     android:textColor="#fff"
                     android:onClick="goTo3DCamera"
                     />
@@ -123,7 +121,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -133,7 +131,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/btn_gradient_style"
-                    android:text="Models"
+                    android:text="@string/models"
                     android:textColor="#fff"
                     android:onClick="goToModelCamera"
                     />
@@ -142,7 +140,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -153,7 +151,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/btn_gradient_style"
-                    android:text="Just for fun"
+                    android:text="@string/just_for_fun"
                     android:textColor="#fff"
                     />
 

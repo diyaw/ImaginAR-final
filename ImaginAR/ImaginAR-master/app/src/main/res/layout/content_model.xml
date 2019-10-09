@@ -5,26 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ModelActivity"
-    tools:showIn="@layout/activity_model">
+    tools:showIn="@layout/activity_model"
+    >
+
 
     <fragment
         android:id="@+id/sceneform_fragment"
-        android:name="com.vesit.imaginar.one.WritingArFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/gallery_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintVertical_weight="9" />
+        app:layout_constraintVertical_weight="9"
+        android:name="com.vesit.imaginar.one.WritingArFragment" />
+
     <LinearLayout
         android:id="@+id/gallery_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sceneform_fragment"
         app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintVertical_weight="1"/>
+        app:layout_constraintVertical_weight="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
