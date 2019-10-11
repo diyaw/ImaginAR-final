@@ -4,50 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bright_white"
     tools:context=".MainActivity">
-
-
-
-    <LinearLayout
-        android:id="@+id/textsplash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="300dp"
-        android:elevation="6dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/imaginar"
-            android:textColor="#FFF"
-            android:textSize="30sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/experience_to_augmented_reality"
-            android:textColor="#FFF"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-
-
 
     <LinearLayout
         android:id="@+id/menus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="240dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="70dp"
         android:elevation="6dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,105 +24,53 @@
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <Button
+                android:id="@+id/png"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="@drawable/btn_gradient_style"
+                android:text="PNG"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_margin="25dp"/>
 
+            <Button
+                android:id="@+id/jff"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="@drawable/btn_gradient_style"
+                android:text="Just for fun"
+                android:layout_margin="25dp"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical|center_horizontal"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:gravity="center"
-                android:orientation="vertical">
+            <Button
+                android:id="@+id/threed"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="@drawable/btn_gradient_style"
+                android:onClick="goTo3DCamera"
+                android:text="3D face"
+                android:layout_margin="25dp"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical|center_horizontal"/>
 
+            <Button
+                android:id="@+id/models"
+                android:layout_margin="25dp"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="@drawable/btn_gradient_style"
+                android:onClick="goToModelCamera"
+                android:text="Models"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical|center_horizontal"
 
-                <Button
-                    android:id="@+id/png"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/btn_gradient_style"
-                    android:onClick="goToPNG"
-                    android:text="@string/png"
-                    android:textColor="#fff" />
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/threed"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/btn_gradient_style"
-                    android:text="@string/_3d_face"
-                    android:textColor="#fff"
-                    android:onClick="goTo3DCamera"
-                    />
-
-
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-
-                <Button
-                    android:id="@+id/models"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/btn_gradient_style"
-                    android:text="@string/models"
-                    android:textColor="#fff"
-                    android:onClick="goToModelCamera"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-
-
-                <Button
-                    android:id="@+id/jff"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/btn_gradient_style"
-                    android:text="@string/just_for_fun"
-                    android:textColor="#fff"
-                    />
-
-            </LinearLayout>
+                />
 
 
         </LinearLayout>
@@ -165,16 +80,20 @@
 
     <ImageView
         android:id="@+id/bgapp"
-        android:layout_width="526dp"
-        android:layout_height="900dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
         android:scaleType="fitXY"
         android:src="@drawable/bgapp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
