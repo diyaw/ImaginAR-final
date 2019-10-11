@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
         bgapp = (ImageView) findViewById(R.id.bgapp);
 
-        textsplash = (LinearLayout) findViewById(R.id.textsplash);
+        //textsplash = (LinearLayout) findViewById(R.id.textsplash);
 
         menus = (LinearLayout) findViewById(R.id.menus);
 
         bgapp.animate().translationY(-1900).setDuration(800).setStartDelay(300);
 
-        textsplash.animate().translationY(140).alpha(0).setDuration(800).setStartDelay(300);
+        //textsplash.animate().translationY(140).alpha(0).setDuration(800).setStartDelay(300);
 
 
         menus.startAnimation(frombottom);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goTo3DCamera(View view)
     {
-        Intent intent = new Intent(MainActivity.this, FaceModel.class);
+        Intent intent = new Intent(MainActivity.this, FaceModelActivity.class);
         startActivity(intent);
     }
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToPNG(View view){
-        Intent intent = new Intent(MainActivity.this, PNG.class);
+        Intent intent = new Intent(MainActivity.this, PNGActivity.class);
         startActivity(intent);
     }
 }

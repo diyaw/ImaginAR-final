@@ -30,12 +30,12 @@ import java.util.Map;
 /**
  * This is an example activity that uses the Sceneform UX package to make common AR tasks easier.
  */
-public class FaceModel extends AppCompatActivity {
+public class FaceModelActivity extends AppCompatActivity {
 
 
     private Texture faceMeshTexture;
     private final HashMap<AugmentedFace, AugmentedFaceNode> faceNodeMap = new HashMap<>();
-    private static final String TAG = FaceModel.class.getSimpleName();
+    private static final String TAG = FaceModelActivity.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
 
     private ModelRenderable faceRegionsRenderable;

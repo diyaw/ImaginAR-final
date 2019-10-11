@@ -18,10 +18,6 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.core.AugmentedFace;
-import com.google.ar.core.Frame;
-import com.google.ar.core.HitResult;
-import com.google.ar.core.Plane;
-import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.ArSceneView;
 import com.google.ar.sceneform.FrameTime;
@@ -40,10 +36,9 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
-public class PNG extends AppCompatActivity {
+public class PNGActivity extends AppCompatActivity {
 
 
     private Texture faceMeshTexture;
@@ -354,7 +349,7 @@ public class PNG extends AppCompatActivity {
                 try {
                     saveBitmapToDisk(bitmap, filename);
                 } catch (IOException e) {
-                    Toast toast = Toast.makeText(PNG.this, e.toString(),
+                    Toast toast = Toast.makeText(PNGActivity.this, e.toString(),
                             Toast.LENGTH_LONG);
                     toast.show();
                     return;
@@ -364,8 +359,8 @@ public class PNG extends AppCompatActivity {
                 snackbar.setAction("Open in Photos", v -> {
                     File photoFile = new File(filename);
 
-                    Uri photoURI = FileProvider.getUriForFile(PNG.this,
-                            PNG.this.getPackageName() + ".ar.codelab.name.provider",
+                    Uri photoURI = FileProvider.getUriForFile(PNGActivity.this,
+                            PNGActivity.this.getPackageName() + ".ar.codelab.name.provider",
                             photoFile);
                     Intent intent = new Intent(Intent.ACTION_VIEW, photoURI);
                     intent.setDataAndType(photoURI, "image/*");
@@ -375,7 +370,7 @@ public class PNG extends AppCompatActivity {
                 });
                 snackbar.show();
             } else {
-                Toast toast = Toast.makeText(PNG.this,
+                Toast toast = Toast.makeText(PNGActivity.this,
                         "Failed to copyPixels: " + copyResult, Toast.LENGTH_LONG);
                 toast.show();
             }
