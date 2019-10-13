@@ -11,3 +11,7 @@ Augmented Reality Project
 
 [face API AR based](https://stackoverflow.com/questions/54869965/augmented-faces-api-how-facial-landmarks-generated)
 
+[arcore documentation](https://developers.google.com/ar/develop/java/quickstart)
+
+
+
