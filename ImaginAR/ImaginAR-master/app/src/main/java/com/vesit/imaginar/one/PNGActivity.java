@@ -64,50 +64,52 @@ public class PNGActivity extends AppCompatActivity {
 
     }
 
+    private static final int MASK[] = {
+
+            R.drawable.hair,
+            R.drawable.glasses2,
+            R.drawable.glasses3,
+            R.drawable.glasses4,
+            R.drawable.glasses5,
+            R.drawable.dog,
+            R.drawable.cat2
+    };
+
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         ImageView andy = new ImageView(this);
         andy.setImageResource(R.drawable.droid_thumb);
         andy.setContentDescription("fox");
-        andy.setOnClickListener(view -> addFox());
+        andy.setOnClickListener(view -> addFilter(0));
         gallery.addView(andy);
 
         ImageView cabin = new ImageView(this);
         cabin.setImageResource(R.drawable.cabin_thumb);
         cabin.setContentDescription("cabin");
-        cabin.setOnClickListener(view -> addcabin());
+        cabin.setOnClickListener(view -> addFilter(1));
         gallery.addView(cabin);
 
         ImageView house = new ImageView(this);
         house.setImageResource(R.drawable.house_thumb);
         house.setContentDescription("house");
-        house.setOnClickListener(view -> addHouse());
+        house.setOnClickListener(view -> addFilter(2));
         gallery.addView(house);
 
         ImageView igloo = new ImageView(this);
         igloo.setImageResource(R.drawable.igloo_thumb);
         igloo.setContentDescription("igloo");
-        igloo.setOnClickListener(view -> addIgloo());
+        igloo.setOnClickListener(view -> addFilter(3));
         gallery.addView(igloo);
+
+
     }
 
-    private void addIgloo() {
-
-        ModelRenderable.builder()
-                .setSource(this, R.raw.fox_face)
-                .build()
-                .thenAccept(
-                        modelRenderable -> {
-                            faceRegionsRenderable = modelRenderable;
-                            modelRenderable.setShadowCaster(false);
-                            modelRenderable.setShadowReceiver(false);
-                        });
+    private void addFilter(int filter_index) {
         Texture.builder()
-                .setSource(this,R.drawable.igloo_thumb)
+                .setSource(this,MASK[filter_index])
                 .build()
                 .thenAccept(texture -> faceMeshTexture = texture);
-
 
         ArSceneView sceneView = arFragment.getArSceneView();
         sceneView.setCameraStreamRenderPriority(Renderable.RENDER_PRIORITY_FIRST);
@@ -116,169 +118,7 @@ public class PNGActivity extends AppCompatActivity {
         scene.addOnUpdateListener(
 
                 (FrameTime frameTime) -> {
-                    if (faceRegionsRenderable == null || faceMeshTexture == null) {
-                        return;
-                    }
-
-                    Collection<AugmentedFace> faceList =
-                            sceneView.getSession().getAllTrackables(AugmentedFace.class);
-
-                    for (AugmentedFace face : faceList) {
-                        if (!faceNodeMap.containsKey(face)) {
-                            AugmentedFaceNode faceNode = new AugmentedFaceNode(face);
-                            faceNode.setParent(scene);
-                            faceNode.setFaceMeshTexture(faceMeshTexture);
-//                            faceNode.setFaceRegionsRenderable(faceRegionsRenderable);
-                            faceNodeMap.put(face, faceNode);
-                        }
-                    }
-
-                    Iterator<Map.Entry<AugmentedFace, AugmentedFaceNode>> iter = faceNodeMap.entrySet().iterator();
-                    while (iter.hasNext()) {
-                        Map.Entry<AugmentedFace, AugmentedFaceNode> entry = iter.next();
-                        AugmentedFace face = entry.getKey();
-                        if (face.getTrackingState() == TrackingState.STOPPED) {
-                            AugmentedFaceNode faceNode = entry.getValue();
-                            faceNode.setParent(null);
-                            iter.remove();
-                        }
-                    }
-                });
-    }
-
-    private void addHouse() {
-
-        ModelRenderable.builder()
-                .setSource(this, R.raw.fox_face)
-                .build()
-                .thenAccept(
-                        modelRenderable -> {
-                            faceRegionsRenderable = modelRenderable;
-                            modelRenderable.setShadowCaster(false);
-                            modelRenderable.setShadowReceiver(false);
-                        });
-        Texture.builder()
-                .setSource(this,R.drawable.house_thumb)
-                .build()
-                .thenAccept(texture -> faceMeshTexture = texture);
-
-
-        ArSceneView sceneView = arFragment.getArSceneView();
-        sceneView.setCameraStreamRenderPriority(Renderable.RENDER_PRIORITY_FIRST);
-        Scene scene = sceneView.getScene();
-
-        scene.addOnUpdateListener(
-
-                (FrameTime frameTime) -> {
-                    if (faceRegionsRenderable == null || faceMeshTexture == null) {
-                        return;
-                    }
-
-                    Collection<AugmentedFace> faceList =
-                            sceneView.getSession().getAllTrackables(AugmentedFace.class);
-
-                    for (AugmentedFace face : faceList) {
-                        if (!faceNodeMap.containsKey(face)) {
-                            AugmentedFaceNode faceNode = new AugmentedFaceNode(face);
-                            faceNode.setParent(scene);
-                            faceNode.setFaceMeshTexture(faceMeshTexture);
-//                            faceNode.setFaceRegionsRenderable(faceRegionsRenderable);
-                            faceNodeMap.put(face, faceNode);
-                        }
-                    }
-
-                    Iterator<Map.Entry<AugmentedFace, AugmentedFaceNode>> iter = faceNodeMap.entrySet().iterator();
-                    while (iter.hasNext()) {
-                        Map.Entry<AugmentedFace, AugmentedFaceNode> entry = iter.next();
-                        AugmentedFace face = entry.getKey();
-                        if (face.getTrackingState() == TrackingState.STOPPED) {
-                            AugmentedFaceNode faceNode = entry.getValue();
-                            faceNode.setParent(null);
-                            iter.remove();
-                        }
-                    }
-                });
-    }
-
-    private void addcabin() {
-
-        ModelRenderable.builder()
-                .setSource(this, R.raw.fox_face)
-                .build()
-                .thenAccept(
-                        modelRenderable -> {
-                            faceRegionsRenderable = modelRenderable;
-                            modelRenderable.setShadowCaster(false);
-                            modelRenderable.setShadowReceiver(false);
-                        });
-        Texture.builder()
-                .setSource(this,R.drawable.cabin_thumb)
-                .build()
-                .thenAccept(texture -> faceMeshTexture = texture);
-
-
-        ArSceneView sceneView = arFragment.getArSceneView();
-        sceneView.setCameraStreamRenderPriority(Renderable.RENDER_PRIORITY_FIRST);
-        Scene scene = sceneView.getScene();
-
-        scene.addOnUpdateListener(
-
-                (FrameTime frameTime) -> {
-                    if (faceRegionsRenderable == null || faceMeshTexture == null) {
-                        return;
-                    }
-
-                    Collection<AugmentedFace> faceList =
-                            sceneView.getSession().getAllTrackables(AugmentedFace.class);
-
-                    for (AugmentedFace face : faceList) {
-                        if (!faceNodeMap.containsKey(face)) {
-                            AugmentedFaceNode faceNode = new AugmentedFaceNode(face);
-                            faceNode.setParent(scene);
-                            faceNode.setFaceMeshTexture(faceMeshTexture);
-//                            faceNode.setFaceRegionsRenderable(faceRegionsRenderable);
-                            faceNodeMap.put(face, faceNode);
-                        }
-                    }
-
-                    Iterator<Map.Entry<AugmentedFace, AugmentedFaceNode>> iter = faceNodeMap.entrySet().iterator();
-                    while (iter.hasNext()) {
-                        Map.Entry<AugmentedFace, AugmentedFaceNode> entry = iter.next();
-                        AugmentedFace face = entry.getKey();
-                        if (face.getTrackingState() == TrackingState.STOPPED) {
-                            AugmentedFaceNode faceNode = entry.getValue();
-                            faceNode.setParent(null);
-                            iter.remove();
-                        }
-                    }
-                });
-    }
-
-    private void addFox() {
-
-        ModelRenderable.builder()
-                .setSource(this, R.raw.fox_face)
-                .build()
-                .thenAccept(
-                        modelRenderable -> {
-                            faceRegionsRenderable = modelRenderable;
-                            modelRenderable.setShadowCaster(false);
-                            modelRenderable.setShadowReceiver(false);
-                        });
-        Texture.builder()
-                .setSource(this,R.drawable.fox_face_mesh_texture)
-                .build()
-                .thenAccept(texture -> faceMeshTexture = texture);
-
-
-        ArSceneView sceneView = arFragment.getArSceneView();
-        sceneView.setCameraStreamRenderPriority(Renderable.RENDER_PRIORITY_FIRST);
-        Scene scene = sceneView.getScene();
-
-        scene.addOnUpdateListener(
-
-                (FrameTime frameTime) -> {
-                    if (faceRegionsRenderable == null || faceMeshTexture == null) {
+                    if ( faceMeshTexture == null) {
                         return;
                     }
 
