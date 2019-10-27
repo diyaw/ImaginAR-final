@@ -22,10 +22,13 @@ import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.ArSceneView;
 import com.google.ar.sceneform.FrameTime;
 import com.google.ar.sceneform.Scene;
+import com.google.ar.sceneform.rendering.MaterialFactory;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.Renderable;
 import com.google.ar.sceneform.rendering.Texture;
 import com.google.ar.sceneform.ux.AugmentedFaceNode;
+import java.util.concurrent.CompletableFuture;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -37,13 +40,15 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class PNGActivity extends AppCompatActivity {
 
 
     private Texture faceMeshTexture;
     private final HashMap<AugmentedFace, AugmentedFaceNode> faceNodeMap = new HashMap<>();
-
+    private ModelRenderable faceRegionsRenderable;
     private FaceArFragment arFragment;
 
     @Override
@@ -103,6 +108,18 @@ public class PNGActivity extends AppCompatActivity {
     }
 
     private void addFilter(int filter_index) {
+
+
+        ModelRenderable.builder()
+                .setSource(this, R.raw.fox_face)
+                .build()
+                .thenAccept(
+                        modelRenderable -> {
+                            faceRegionsRenderable = modelRenderable;
+                            modelRenderable.setShadowCaster(false);
+                            modelRenderable.setShadowReceiver(false);
+                        });
+
         Texture.builder()
                 .setSource(this,MASK[filter_index])
                 .build()
@@ -112,22 +129,32 @@ public class PNGActivity extends AppCompatActivity {
         sceneView.setCameraStreamRenderPriority(Renderable.RENDER_PRIORITY_FIRST);
         Scene scene = sceneView.getScene();
 
+
+        Collection<AugmentedFace> faceList =
+                sceneView.getSession().getAllTrackables(AugmentedFace.class);
+        for (AugmentedFace face : faceList) {
+            AugmentedFaceNode faceNode = new AugmentedFaceNode(face);
+
+            faceNode.setParent(scene);
+            faceNode.setFaceMeshTexture(faceMeshTexture);
+        }
+
+
         scene.addOnUpdateListener(
 
                 (FrameTime frameTime) -> {
-                    if ( faceMeshTexture == null) {
+                    if (faceRegionsRenderable == null || faceMeshTexture == null) {
                         return;
                     }
 
-                    Collection<AugmentedFace> faceList =
-                            sceneView.getSession().getAllTrackables(AugmentedFace.class);
+
 
                     for (AugmentedFace face : faceList) {
                         if (!faceNodeMap.containsKey(face)) {
                             AugmentedFaceNode faceNode = new AugmentedFaceNode(face);
                             faceNode.setParent(scene);
                             faceNode.setFaceMeshTexture(faceMeshTexture);
-//
+//                            faceNode.setFaceRegionsRenderable(faceRegionsRenderable);
                             faceNodeMap.put(face, faceNode);
                         }
                     }
@@ -215,5 +242,3 @@ public class PNGActivity extends AppCompatActivity {
         }, new Handler(handlerThread.getLooper()));
     }
 }
-
-
