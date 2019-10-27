@@ -43,7 +43,7 @@ public class PNGActivity extends AppCompatActivity {
 
     private Texture faceMeshTexture;
     private final HashMap<AugmentedFace, AugmentedFaceNode> faceNodeMap = new HashMap<>();
-    private ModelRenderable faceRegionsRenderable;
+
     private FaceArFragment arFragment;
 
     @Override
@@ -51,9 +51,6 @@ public class PNGActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_png);
 
-//        super.onCreate(savedInstanceState);
-
-//        setContentView(R.layout.activity_ux);
         arFragment = (FaceArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -130,7 +127,7 @@ public class PNGActivity extends AppCompatActivity {
                             AugmentedFaceNode faceNode = new AugmentedFaceNode(face);
                             faceNode.setParent(scene);
                             faceNode.setFaceMeshTexture(faceMeshTexture);
-//                            faceNode.setFaceRegionsRenderable(faceRegionsRenderable);
+//
                             faceNodeMap.put(face, faceNode);
                         }
                     }
