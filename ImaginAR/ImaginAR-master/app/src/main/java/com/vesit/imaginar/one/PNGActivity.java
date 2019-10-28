@@ -87,19 +87,19 @@ public class PNGActivity extends AppCompatActivity {
         gallery.addView(andy);
 
         ImageView cabin = new ImageView(this);
-        cabin.setImageResource(R.drawable.cabin_thumb);
+        cabin.setImageResource(R.drawable.droid_thumb);
         cabin.setContentDescription("cabin");
         cabin.setOnClickListener(view -> addFilter(1));
         gallery.addView(cabin);
 
         ImageView house = new ImageView(this);
-        house.setImageResource(R.drawable.house_thumb);
+        house.setImageResource(R.drawable.droid_thumb);
         house.setContentDescription("house");
         house.setOnClickListener(view -> addFilter(2));
         gallery.addView(house);
 
         ImageView igloo = new ImageView(this);
-        igloo.setImageResource(R.drawable.igloo_thumb);
+        igloo.setImageResource(R.drawable.droid_thumb);
         igloo.setContentDescription("igloo");
         igloo.setOnClickListener(view -> addFilter(3));
         gallery.addView(igloo);
