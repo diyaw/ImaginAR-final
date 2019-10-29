@@ -68,42 +68,57 @@ public class PNGActivity extends AppCompatActivity {
 
     private static final int MASK[] = {
 
-            R.drawable.hair,
-            R.drawable.glasses2,
-            R.drawable.glasses3,
-            R.drawable.glasses4,
-            R.drawable.glasses5,
-            R.drawable.dog,
-            R.drawable.cat2
+            R.drawable.face_mesh_texture_1,
+            R.drawable.face_mesh_texture_2,
+            R.drawable.face_mesh_texture_3,
+            R.drawable.face_mesh_texture_4,
+            R.drawable.face_mesh_texture_5,
+            R.drawable.face_mesh_texture_6,
+            R.drawable.face_mesh_texture_7,
+            R.drawable.face_mesh_texture_8,
+            R.drawable.face_mesh_texture_9,
+            R.drawable.face_mesh_texture_10
+
     };
 
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
+        ImageView face_mesh = new ImageView(this);
+        face_mesh.setImageResource(R.drawable.droid_thumb);
+        face_mesh.setContentDescription("fox");
+        face_mesh.setOnClickListener(view -> addFilter(0));
+        gallery.addView(face_mesh);
+
+        ImageView flower_design = new ImageView(this);
+        flower_design.setImageResource(R.drawable.droid_thumb);
+        flower_design.setContentDescription("cabin");
+        flower_design.setOnClickListener(view -> addFilter(1));
+        gallery.addView(flower_design);
+
+        ImageView rose_design = new ImageView(this);
+        rose_design.setImageResource(R.drawable.droid_thumb);
+        rose_design.setContentDescription("house");
+        rose_design.setOnClickListener(view -> addFilter(2));
+        gallery.addView(rose_design);
+
+        ImageView brown_makeup = new ImageView(this);
+        brown_makeup.setImageResource(R.drawable.droid_thumb);
+        brown_makeup.setContentDescription("igloo");
+        brown_makeup.setOnClickListener(view -> addFilter(3));
+        gallery.addView(brown_makeup);
+
         ImageView andy = new ImageView(this);
         andy.setImageResource(R.drawable.droid_thumb);
         andy.setContentDescription("fox");
-        andy.setOnClickListener(view -> addFilter(0));
+        andy.setOnClickListener(view -> addFilter(4));
         gallery.addView(andy);
 
         ImageView cabin = new ImageView(this);
         cabin.setImageResource(R.drawable.droid_thumb);
         cabin.setContentDescription("cabin");
-        cabin.setOnClickListener(view -> addFilter(1));
+        cabin.setOnClickListener(view -> addFilter(5));
         gallery.addView(cabin);
-
-        ImageView house = new ImageView(this);
-        house.setImageResource(R.drawable.droid_thumb);
-        house.setContentDescription("house");
-        house.setOnClickListener(view -> addFilter(2));
-        gallery.addView(house);
-
-        ImageView igloo = new ImageView(this);
-        igloo.setImageResource(R.drawable.droid_thumb);
-        igloo.setContentDescription("igloo");
-        igloo.setOnClickListener(view -> addFilter(3));
-        gallery.addView(igloo);
-
 
     }
 
@@ -132,10 +147,13 @@ public class PNGActivity extends AppCompatActivity {
 
         Collection<AugmentedFace> faceList =
                 sceneView.getSession().getAllTrackables(AugmentedFace.class);
+
         for (AugmentedFace face : faceList) {
             AugmentedFaceNode faceNode = new AugmentedFaceNode(face);
 
+
             faceNode.setParent(scene);
+
             faceNode.setFaceMeshTexture(faceMeshTexture);
         }
 
@@ -170,7 +188,12 @@ public class PNGActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+
     }
+
+
+
 
     private String generateFilename() {
         String date =
