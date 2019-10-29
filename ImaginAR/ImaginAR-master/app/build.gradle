@@ -78,7 +78,6 @@ sceneform.asset('sampledata/models/igloo.obj',
         'default',
         'sampledata/models/igloo.sfa',
         'src/main/assets/igloo')
-
 sceneform.asset('sampledata/models/Earth/Earth.gltf',
         'default',
         'sampledata/models/Earth/Earth.sfa',

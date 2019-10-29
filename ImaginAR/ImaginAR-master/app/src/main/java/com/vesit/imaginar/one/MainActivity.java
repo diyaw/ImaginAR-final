@@ -59,4 +59,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, PNGActivity.class);
         startActivity(intent);
     }
+
+    public void goToJustForFun(View view){
+        Intent intent = new Intent(MainActivity.this, SolarActivity.class);
+        startActivity(intent);
+    }
 }

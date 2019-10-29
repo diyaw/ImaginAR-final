@@ -48,6 +48,7 @@
                 android:text="@string/just_for_fun"
                 android:layout_margin="25dp"
                 android:textColor="#000"
+                android:onClick="goToJustForFun"
                 android:layout_gravity="center_vertical|center_horizontal"/>
 
             <Button
