@@ -86,37 +86,37 @@ public class PNGActivity extends AppCompatActivity {
 
         ImageView face_mesh = new ImageView(this);
         face_mesh.setImageResource(R.drawable.droid_thumb);
-        face_mesh.setContentDescription("fox");
+        //face_mesh.setContentDescription("fox");
         face_mesh.setOnClickListener(view -> addFilter(0));
         gallery.addView(face_mesh);
 
         ImageView flower_design = new ImageView(this);
         flower_design.setImageResource(R.drawable.droid_thumb);
-        flower_design.setContentDescription("cabin");
+        //flower_design.setContentDescription("cabin");
         flower_design.setOnClickListener(view -> addFilter(1));
         gallery.addView(flower_design);
 
         ImageView rose_design = new ImageView(this);
         rose_design.setImageResource(R.drawable.droid_thumb);
-        rose_design.setContentDescription("house");
+        //rose_design.setContentDescription("house");
         rose_design.setOnClickListener(view -> addFilter(2));
         gallery.addView(rose_design);
 
         ImageView brown_makeup = new ImageView(this);
         brown_makeup.setImageResource(R.drawable.droid_thumb);
-        brown_makeup.setContentDescription("igloo");
+        //brown_makeup.setContentDescription("igloo");
         brown_makeup.setOnClickListener(view -> addFilter(3));
         gallery.addView(brown_makeup);
 
         ImageView andy = new ImageView(this);
         andy.setImageResource(R.drawable.droid_thumb);
-        andy.setContentDescription("fox");
+        //andy.setContentDescription("fox");
         andy.setOnClickListener(view -> addFilter(4));
         gallery.addView(andy);
 
         ImageView cabin = new ImageView(this);
         cabin.setImageResource(R.drawable.droid_thumb);
-        cabin.setContentDescription("cabin");
+        //cabin.setContentDescription("cabin");
         cabin.setOnClickListener(view -> addFilter(5));
         gallery.addView(cabin);
 

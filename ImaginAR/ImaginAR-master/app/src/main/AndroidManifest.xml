@@ -25,12 +25,13 @@
 
         </activity>
         <activity android:name=".PNGActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ModelActivity"
             android:label="@string/title_activity_model"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FaceModelActivity" />
+        <activity android:name=".FaceModelActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
